@@ -1,5 +1,7 @@
 import Image from "next/image"
-import { motion } from "framer-motion"
+
+// Remove framer-motion import
+// import { motion } from "framer-motion"
 
 const projects = [
   {
@@ -31,13 +33,15 @@ export default function Projects() {
         <h2 className="text-3xl font-bold mb-12 text-center">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            // Replace motion.div with regular div
+            <div
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              // Remove all animation props:
+              // initial={{ opacity: 0, y: 50 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.5, delay: index * 0.1 }}
+              // viewport={{ once: true }}
             >
               <div className="relative h-48 md:h-64">
                 <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
@@ -53,7 +57,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
