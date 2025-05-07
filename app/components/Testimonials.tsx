@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 const testimonials = [
   {
     name: "Jane Doe",
@@ -21,16 +25,38 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-tertiary">
+    <section id="testimonials" className="py-20 bg-quaternary">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center text-primary">Client Testimonials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.h2 
+          className="text-4xl font-bold mb-16 text-center text-primary"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Client Testimonials
+        </motion.h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="mb-4 text-gray-600 italic">"{testimonial.testimonial}"</p>
-              <p className="font-semibold">{testimonial.name}</p>
-              <p className="text-sm text-gray-500">{testimonial.company}</p>
-            </div>
+            <motion.div 
+              key={index} 
+              className="bg-white p-8 rounded-lg shadow-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
+              whileHover={{ 
+                y: -10,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+              }}
+            >
+              <p className="mb-6 text-lg italic text-text-secondary leading-relaxed">"{testimonial.testimonial}"</p>
+              <div>
+                <p className="font-semibold text-lg text-primary">{testimonial.name}</p>
+                <p className="text-text-secondary">{testimonial.company}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

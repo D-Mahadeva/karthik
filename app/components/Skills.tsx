@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 const skills = [
   { name: "HTML5", level: 90 },
   { name: "CSS3", level: 85 },
@@ -11,20 +15,46 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-secondary text-quaternary">
+    <section id="skills" className="py-20 bg-primary text-quaternary">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">My Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.h2 
+          className="text-4xl font-bold mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          My Skills
+        </motion.h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {skills.map((skill, index) => (
-            <div key={index} className="mb-4">
-              <div className="flex justify-between mb-1">
-                <span className="font-semibold">{skill.name}</span>
+            <motion.div 
+              key={index} 
+              className="mb-4"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
+              <div className="flex justify-between mb-2">
+                <span className="font-semibold text-lg">{skill.name}</span>
                 <span>{skill.level}%</span>
               </div>
-              <div className="w-full bg-primary rounded-full h-2.5">
-                <div className="bg-tertiary h-2.5 rounded-full" style={{ width: `${skill.level}%` }}></div>
+              <div className="w-full bg-secondary rounded-full h-3 overflow-hidden">
+                <motion.div
+                  className="bg-tertiary h-3 rounded-full" 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 1.5,
+                    delay: 0.2 + (index * 0.1),
+                    ease: "easeOut"
+                  }}
+                />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
