@@ -8,7 +8,7 @@ const skills = [
   { name: "JavaScript", level: 80 },
   { name: "React", level: 75 },
   { name: "Node.js", level: 70 },
-  { name: "Python", level: 65 },
+  { name: "Java", level: 65 },
   { name: "UI/UX Design", level: 80 },
   { name: "Adobe Creative Suite", level: 75 },
 ]
@@ -22,20 +22,20 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
           My Skills
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div 
               key={index} 
-              className="mb-4"
-              initial={{ opacity: 0, x: -50 }}
+              className="mb-6"
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="flex justify-between mb-2">
                 <span className="font-semibold text-lg">{skill.name}</span>
@@ -48,8 +48,8 @@ export default function Skills() {
                   whileInView={{ width: `${skill.level}%` }}
                   viewport={{ once: true }}
                   transition={{ 
-                    duration: 1.5,
-                    delay: 0.2 + (index * 0.1),
+                    duration: 1.2,
+                    delay: 0.2,
                     ease: "easeOut"
                   }}
                 />

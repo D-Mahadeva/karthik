@@ -12,26 +12,28 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
           About Me
         </motion.h2>
         
-        <div className="md:flex md:items-center md:gap-12 max-w-5xl mx-auto">
+        <div className="md:flex md:items-center md:gap-10 max-w-5xl mx-auto">
           <motion.div 
-            className="md:w-1/3 mb-10 md:mb-0"
+            className="md:w-1/3 mb-10 md:mb-0 flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Image
-              src="/nathan-about.jpg" // Update with actual image path
-              alt="Nathan Sterling"
-              width={400}
-              height={400}
-              className="rounded-lg mx-auto object-cover shadow-lg"
-            />
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+              <Image
+                src="/nathan-about.jpg" // Make sure this file exists in your public folder
+                alt="Dollegowda Mahadeva"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
           </motion.div>
           
           <motion.div 
@@ -48,7 +50,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              Hi, I'm Nathan Sterling, a passionate web developer and designer with over 5 years of experience in
+              Hi, I'm Mahadeva, a passionate web developer and designer with over 1 years of experience in
               creating beautiful, functional, and user-centered digital experiences.
             </motion.p>
             
@@ -60,7 +62,7 @@ export default function About() {
               transition={{ delay: 0.5 }}
             >
               I specialize in building responsive websites and web applications using modern technologies like React,
-              Node.js, and Python. My background in both development and design allows me to bridge the gap between
+              Node.js, and using JavaScript. My background in both development and design allows me to bridge the gap between
               aesthetics and functionality, ensuring that the websites I create not only look great but also perform
               exceptionally.
             </motion.p>

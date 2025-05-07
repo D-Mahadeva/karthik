@@ -6,21 +6,21 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
   
   return (
-    <footer className="bg-primary text-quaternary py-10">
+    <footer className="bg-primary text-quaternary py-8">
       <div className="container mx-auto px-6 text-center">
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          &copy; {currentYear} Nathan Sterling. All rights reserved.
+          &copy; {currentYear} Mahadeva. All rights reserved.
         </motion.p>
         
         <div className="flex justify-center gap-6">
           <motion.a
-            href="https://github.com/nathansterling"
+            href="https://github.com/D-Mahadeva"
             target="_blank"
             rel="noopener noreferrer"
             className="text-quaternary hover:text-white transition-colors"
@@ -34,7 +34,7 @@ export default function Footer() {
             GitHub
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/nathansterling"
+            href="https://www.linkedin.com/in/d-mahadeva/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-quaternary hover:text-white transition-colors"
@@ -48,7 +48,7 @@ export default function Footer() {
             LinkedIn
           </motion.a>
           <motion.a
-            href="mailto:contact@nathansterling.com"
+            href="mailto:mahadevadmahadev78@gmaill.com"
             className="text-quaternary hover:text-white transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

@@ -4,22 +4,22 @@ import { motion } from "framer-motion"
 
 const testimonials = [
   {
-    name: "Jane Doe",
-    company: "Tech Innovators Inc.",
+    name: "Kiran",
+    company: "Quince",
     testimonial:
-      "Nathan's expertise in both design and development made our project a breeze. He delivered a stunning website that exceeded our expectations.",
+      "Mahadeva's expertise in both design and development made our project a Quick. He delivered a stunning website that exceeded our expectations.",
   },
   {
-    name: "John Smith",
-    company: "Creative Solutions LLC",
-    testimonial:
-      "Working with Nathan was a pleasure. His attention to detail and problem-solving skills are unmatched. I highly recommend his services.",
-  },
-  {
-    name: "Emily Johnson",
+    name: "Deekshith",
     company: "StartUp Ventures",
     testimonial:
-      "Nathan's ability to translate our vision into a functional and beautiful website was impressive. He's a true professional in every sense.",
+      "Working with Mahadeva was a pleasure. His attention to detail and problem-solving skills are unmatched. I highly recommend his services.",
+  },
+  {
+    name: "Gowda",
+    company: "StartUp Ventures",
+    testimonial:
+      "Mahadeva's ability to translate our vision into a functional and beautiful website was impressive. He's a true professional in every sense.",
   },
 ]
 
@@ -32,7 +32,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
           Client Testimonials
         </motion.h2>
@@ -41,20 +41,20 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
-              className="bg-white p-8 rounded-lg shadow-card"
+              className="bg-white p-8 rounded-lg shadow-md"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ 
                 y: -10,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
             >
-              <p className="mb-6 text-lg italic text-text-secondary leading-relaxed">"{testimonial.testimonial}"</p>
+              <p className="mb-6 text-lg italic text-gray-600">"{testimonial.testimonial}"</p>
               <div>
                 <p className="font-semibold text-lg text-primary">{testimonial.name}</p>
-                <p className="text-text-secondary">{testimonial.company}</p>
+                <p className="text-gray-600">{testimonial.company}</p>
               </div>
             </motion.div>
           ))}
