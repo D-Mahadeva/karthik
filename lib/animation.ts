@@ -58,7 +58,26 @@ export const slideIn: Variants = {
     }
   }
 };
-
+// Page transition animation
+export const pageTransition: Variants = {
+  hidden: { 
+    opacity: 0 
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut"
+    }
+  },
+  exit: { 
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut"
+    }
+  }
+};
 // Hover effect for cards and buttons
 export const hoverScale = {
   scale: 1.05,
